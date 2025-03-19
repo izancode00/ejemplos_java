@@ -26,8 +26,9 @@ public class GestionEmpleados {
         }
         if(sb.toString().equals("")){
             JOptionPane.showMessageDialog(null, "No hay ningun empleado");
+        }else{
+            JOptionPane.showMessageDialog(null, sb.toString());
         }
-        JOptionPane.showMessageDialog(null, sb.toString());
     }
 
     @Operacion(descripcion = "Agregar un empleado")
