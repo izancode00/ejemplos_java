@@ -18,6 +18,15 @@ public class GestionEmpleados {
         empleados = new ArrayList<>();
     }
 
+    @Operacion(descripcion = "Mostrar los empleados")
+    public void mostrarEmpleados() {
+        StringBuilder sb = new StringBuilder();
+        for (Empleado empleado : empleados) {
+            sb.append(empleado).append("\n\n");
+        }
+        JOptionPane.showMessageDialog(null, sb.toString());
+    }
+
     @Operacion(descripcion = "Agregar un empleado")
     public void agregarEmpleado() {
         String dni = JOptionPane.showInputDialog("Ingrese el dni del empleado");
@@ -86,6 +95,8 @@ public class GestionEmpleados {
     public static void main(String[] args) {
         GestionEmpleados gestion = new GestionEmpleados();
         Map<Integer, Consumer<Void>> menu = new HashMap<>();
+        menu.put(1, (v) -> gestion.agregarEmpleado());
+        menu.put(2, (v) -> gestion.mostrarEmpleados());
         menu.put(3, (v) -> gestion.eliminarEmpleado());
 
         boolean salir = false;
