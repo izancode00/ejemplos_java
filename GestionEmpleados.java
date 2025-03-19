@@ -22,7 +22,7 @@ public class GestionEmpleados {
     public void mostrarEmpleados() {
         StringBuilder sb = new StringBuilder();
         for (Empleado empleado : empleados) {
-            sb.append(empleado).append("\n\n");
+            sb.append(empleado.toString()).append("\n\n");
         }
         JOptionPane.showMessageDialog(null, sb.toString());
     }
