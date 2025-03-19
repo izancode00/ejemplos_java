@@ -1,11 +1,11 @@
 import java.util.Date;
 
-public class Empleado{
+public class Empleado {
     private String dni;
     private String nombre;
     private String rol;
     private Date fechaNacimiento;
-    
+
     public Empleado(String dni, String nombre, String rol, Date fechaNacimiento) {
         this.dni = dni;
         this.nombre = nombre;
@@ -45,5 +45,8 @@ public class Empleado{
         this.fechaNacimiento = fechaNacimiento;
     }
 
-    
-}
+    public String toString() {
+        return "Empleado: dni=" + dni + "\nnombre=" + nombre + "\nrol=" + rol + "\nfechaNacimiento=" + fechaNacimiento;
+    }
+
+
