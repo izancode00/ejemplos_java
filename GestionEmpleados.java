@@ -1,5 +1,8 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.function.Consumer;
 
 import javax.swing.JOptionPane;
 
@@ -34,7 +37,37 @@ public class GestionEmpleados {
 
 
     public static void main(String[] args) {
-        
+        GestionEmpleados gestion = new GestionEmpleados();
+        Map<Integer, Consumer<Void>> menu = new HashMap<>();
+        menu.put(3, (v) -> gestion.eliminarEmpleado());
+
+        boolean salir = false;
+
+        while(!salir){
+            String opcion = JOptionPane.showInputDialog(
+                """
+                1. Agregar empleado
+                2. Mostrar empleados
+                3. Eliminar empleado
+                4. Salir
+                Seleccione una opción:\s"""
+            );
+            try{
+                int opcionInt = Integer.parseInt(opcion);
+                Consumer<Void> operacion = menu.get(opcionInt);
+                if(operacion != null){
+                    operacion.accept(null);
+                }else if(opcionInt == 4){
+                    salir = true;
+                    JOptionPane.showMessageDialog(null, "Gracias por usar el sistema");
+                }else{
+                    JOptionPane.showMessageDialog(null, "Operacion no valida");
+                }
+            }catch(NumberFormatException e){
+                JOptionPane.showMessageDialog(null, "Error. Ingrese un numero valido");
+                System.out.println("Error. Ingrese un numero valido");
+            }
+        }
     }
 
 
