@@ -4,8 +4,8 @@ public class Tester extends Empleado {
 
     private int pruebasRealizadas;
 
-    public Tester(String dni, String nombre, String rol, Date fechaNacimiento, int pruebasRealizadas) {
-        super(dni, nombre, rol, fechaNacimiento);
+    public Tester(String dni, String nombre, Date fechaNacimiento, int pruebasRealizadas) {
+        super(dni, nombre, RolEmpleado.TESTER, fechaNacimiento);
         this.pruebasRealizadas = pruebasRealizadas;
     }
 
