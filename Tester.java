@@ -17,4 +17,8 @@ public class Tester extends Empleado {
         this.pruebasRealizadas = pruebasRealizadas;
     }
 
+    @Override
+    public String toString() {
+        return super.toString() + "\nNumero de pruebas realizadas: " + pruebasRealizadas;
+    }
 }

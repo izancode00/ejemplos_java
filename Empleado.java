@@ -46,7 +46,5 @@ public class Empleado {
     }
 
     public String toString() {
-        return "Empleado: dni=" + dni + "\nnombre=" + nombre + "\nrol=" + rol + "\nfechaNacimiento=" + fechaNacimiento;
+        return "Empleado: dni=" + dni + "\nNombre=" + nombre + "\nRol=" + rol + "\nFechaNacimiento=" + fechaNacimiento;
     }
-
-
