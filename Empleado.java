@@ -1,15 +1,14 @@
 import java.util.Date;
 
-public class Empleado{
+public class Empleado {
     private String dni;
     private String nombre;
     private RolEmpleado rol;
-    private Date fechaNacimiento;
-    
+    private Date fechaNacimiento;    
     public Empleado(String dni, String nombre, RolEmpleado rol, Date fechaNacimiento) {
         this.dni = dni;
-        this.nombre = nombre;
-        this.rol = rol;
+       
+
         this.fechaNacimiento = fechaNacimiento;
     }
 
@@ -45,9 +44,8 @@ public class Empleado{
         this.fechaNacimiento = fechaNacimiento;
     }
 
-    @Override
     public String toString() {
-        // TODO Auto-generated method stub
-        return super.toString();
+        return "Empleado: dni=" + dni + "\nNombre=" + nombre + "\nRol=" + rol + "\nFechaNacimiento=" + fechaNacimiento;
     }
 }
+
