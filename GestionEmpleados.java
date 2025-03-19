@@ -24,6 +24,9 @@ public class GestionEmpleados {
         for (Empleado empleado : empleados) {
             sb.append(empleado).append("\n\n");
         }
+        if(sb.toString().equals("")){
+            JOptionPane.showMessageDialog(null, "No hay ningun empleado");
+        }
         JOptionPane.showMessageDialog(null, sb.toString());
     }
 
