@@ -3,10 +3,10 @@ import java.util.Date;
 public class Empleado{
     private String dni;
     private String nombre;
-    private String rol;
+    private RolEmpleado rol;
     private Date fechaNacimiento;
     
-    public Empleado(String dni, String nombre, String rol, Date fechaNacimiento) {
+    public Empleado(String dni, String nombre, RolEmpleado rol, Date fechaNacimiento) {
         this.dni = dni;
         this.nombre = nombre;
         this.rol = rol;
@@ -29,11 +29,11 @@ public class Empleado{
         this.nombre = nombre;
     }
 
-    public String getRol() {
+    public RolEmpleado getRol() {
         return rol;
     }
 
-    public void setRol(String rol) {
+    public void setRol(RolEmpleado rol) {
         this.rol = rol;
     }
 
