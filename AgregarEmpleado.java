@@ -1,3 +1,5 @@
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
@@ -14,7 +16,14 @@ public class AgregarEmpleado {
         String dni = JOptionPane.showInputDialog("Ingrese el dni del empleado");
         String nombre = JOptionPane.showInputDialog("Ingrese el nombre del empleado");
         //TO-DO No se si puedo introducir asi un obj Date
-        //Date fecha = JOptionPane.showInputDialog("Ingrese la fecha de nacimiento del empleado");
+        String fecha = JOptionPane.showInputDialog("Ingrese la fecha de nacimiento del empleado (dd/mm/yyyy):");
+        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+        Date fechaDate = null;
+        try {
+            fechaDate = formato.parse(fecha);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
 
         String[] roles = {"GERENTE", "DESARROLLADOR", "TESTER"};
 
