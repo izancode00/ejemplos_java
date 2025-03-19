@@ -2,10 +2,10 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
 
-public class SistGestionEmp {
+public class AgregarEmpleado {
     private List<Empleado> empleados;
 
-    public SistGestionEmp() {
+    public AgregarEmpleado() {
         empleados = new ArrayList<>();
     }
 
@@ -14,7 +14,7 @@ public class SistGestionEmp {
         String dni = JOptionPane.showInputDialog("Ingrese el dni del empleado");
         String nombre = JOptionPane.showInputDialog("Ingrese el nombre del empleado");
         //TO-DO No se si puedo introducir asi un obj Date
-        Date fecha = solicitarInput.showInputDialog("Ingrese la fecha de nacimiento del empleado");
+        //Date fecha = JOptionPane.showInputDialog("Ingrese la fecha de nacimiento del empleado");
 
         String[] roles = {"GERENTE", "DESARROLLADOR", "TESTER"};
 
