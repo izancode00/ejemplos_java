@@ -72,13 +72,17 @@ public class GestionEmpleados {
     }
 
     public void eliminarEmpleado(String dni) {
+        boolean eliminado = false;
         for (Empleado e : empleados) {
             if (e.getDni().equals(dni)) {
                 empleados.remove(e);
                 JOptionPane.showMessageDialog(null, "Se ha eliminado el empleado con dni " + dni);
-            } else {
-                JOptionPane.showMessageDialog(null, "No existe ningun empleado en el sistema con ese DNI");
+                eliminado = true;
+                break;
             }
+        }
+        if(!eliminado){
+            JOptionPane.showMessageDialog(null,"No existe ningun empleado con ese DNI");
         }
     }
 
