@@ -7,8 +7,8 @@ public class Empleado {
     private Date fechaNacimiento;    
     public Empleado(String dni, String nombre, RolEmpleado rol, Date fechaNacimiento) {
         this.dni = dni;
-       
-
+        this.nombre = nombre;
+        this.rol = rol;
         this.fechaNacimiento = fechaNacimiento;
     }
 

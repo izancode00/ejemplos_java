@@ -18,11 +18,13 @@ public class GestionEmpleados {
         empleados = new ArrayList<>();
     }
 
-    @Operacion(descripcion = "Mostrar lista de empleados")
+    @Operacion(descripcion = "Mostrar los empleados")
     public void mostrarEmpleados() {
+        StringBuilder sb = new StringBuilder();
         for (Empleado empleado : empleados) {
-            System.out.println("Lista de empleados \n " + empleado);
+            sb.append(empleado.toString()).append("\n\n");
         }
+        JOptionPane.showMessageDialog(null, sb.toString());
     }
 
     @Operacion(descripcion = "Agregar un empleado")
@@ -70,13 +72,17 @@ public class GestionEmpleados {
     }
 
     public void eliminarEmpleado(String dni) {
+        boolean eliminado = false;
         for (Empleado e : empleados) {
             if (e.getDni().equals(dni)) {
                 empleados.remove(e);
                 JOptionPane.showMessageDialog(null, "Se ha eliminado el empleado con dni " + dni);
-            } else {
-                JOptionPane.showMessageDialog(null, "No existe ningun empleado en el sistema con ese DNI");
+                eliminado = true;
+                break;
             }
+        }
+        if (!eliminado) {
+            JOptionPane.showMessageDialog(null, "No existe ningun empleado con ese DNI");
         }
     }
 
@@ -93,9 +99,8 @@ public class GestionEmpleados {
     public static void main(String[] args) {
         GestionEmpleados gestion = new GestionEmpleados();
         Map<Integer, Consumer<Void>> menu = new HashMap<>();
-
-        menu.put(1, (v) -> gestion.mostrarEmpleados());
-        menu.put(2, (v) -> gestion.agregarEmpleado());
+        menu.put(1, (v) -> gestion.agregarEmpleado());
+        menu.put(2, (v) -> gestion.mostrarEmpleados());
         menu.put(3, (v) -> gestion.eliminarEmpleado());
 
         boolean salir = false;

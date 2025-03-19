@@ -17,4 +17,9 @@ public class Desarrollador extends Empleado {
         this.lenguajeDesarrollo = lenguajeDesarrollo;
     }
 
+    @Override
+    public String toString(){
+        return super.toString() + "\nLenguaje de desarrollo: " + lenguajeDesarrollo;
+    }
+
 }
